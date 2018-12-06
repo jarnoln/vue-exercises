@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercise 1</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="exercise">
+    <p> My name is {{name}}. I'm not really {{ age * 3 }} years old.</p>
+    <p> Here is a random number: {{ Math.random( )}} </p>
+    <p> And here is my pic: </p>
+    <img v-bind:src='image' />
+    <p> Write something here: </p>
+    <div> <input type="text" v-bind:value='name'> </div>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#exercise',
+      data: {
+        name: 'Jarno',
+        age: 42,
+        image: 'https://www.gravatar.com/avatar/e0f333adb74f53ff729c9d071b4d945f/?s=300'
+      },
+      methods: {
+        addOption: function(event) {
+          this.option = event.target.value;
+        }
+      }
+    })
+  </script>
+</body>
+</html>
