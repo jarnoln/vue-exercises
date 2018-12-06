@@ -16,7 +16,8 @@
     <div>
         <input type="text" v-on:keyup="updateValue">
         <p>{{ value }}</p>
-    </div>
+    </div
+    <!-- This should also work: v-on:keydown="value = $event.target.value" -->
     <!-- 3) Adjust the example from 2) to only fire if the "key down" is the ENTER key -->
     <div>
         <input type="text" v-on:keydown.enter="updateValue">
